@@ -7,15 +7,18 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/email")
-@AllArgsConstructor
+//@AllArgsConstructor
 @CrossOrigin(origins = "*")
 public class EmailGeneratorController {
 
     private final EmailGeneratorService emailgeneratorservice;
 
+    public EmailGeneratorController(EmailGeneratorService emailgeneratorservice) {
+        this.emailgeneratorservice = emailgeneratorservice;
+    }
+
     @PostMapping("/generate")
     public ResponseEntity<String> generateEmail(@RequestBody EmailRequest emailRequest) {
-//        System.out.println("test");
         String response = emailgeneratorservice.generateEmailReply(emailRequest);
         return ResponseEntity.ok(response);
     }
