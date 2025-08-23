@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/email")
 //@AllArgsConstructor
-@CrossOrigin(origins = "*")
+//@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "https://stellar-griffin-0e8b5f.netlify.app")
 public class EmailGeneratorController {
 
     private final EmailGeneratorService emailgeneratorservice;
